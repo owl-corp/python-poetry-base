@@ -17,4 +17,5 @@ RUN apt-get update \
   && apt-get install --no-install-recommends -y curl \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN curl -sSL https://install.python-poetry.org | python
+RUN curl -sSL https://install.python-poetry.org | python ; exit 0
+RUN cat /poetry-installer-error-*.log

@@ -17,13 +17,11 @@ jobs:
   build:
     strategy:
       matrix:
-        python_version: ["3.9", 3.9-slim, "3.10", 3.10-slim, "3.11", 3.11-slim, "3", 3-slim]
+        python_version: ["3.9", 3.9-slim, "3.10", 3.10-slim, "3.11", 3.11-slim, 3.12-rc, "3", 3-slim]
         experimental: [false]
         include:
-          - python_version: 3.12-rc
-            experimental: true
           - python_version: 3.12-rc-slim
-            experimental: true
+            experimental: true  # This is expected to fail due to cffi not having 3.12 wheels and -slim not having gcc
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental }}
     steps:
