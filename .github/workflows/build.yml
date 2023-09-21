@@ -18,8 +18,14 @@ jobs:
     strategy:
       matrix:
         python_version: ["3.9", 3.9-slim, "3.10", 3.10-slim, "3.11", 3.11-slim, "3", 3-slim]
+        experimental: [false]
+        include:
+          - python_version: 3.12-rc
+            experimental: true
+          - python_version: 3.12-rc-slim
+            experimental: true
     runs-on: ubuntu-latest
-
+    continue-on-error: ${{ matrix.experimental }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
