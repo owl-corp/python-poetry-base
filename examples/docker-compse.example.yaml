@@ -1,0 +1,13 @@
+  bot:
+    restart: unless-stopped
+    build: .
+    volumes:
+      - .:/app:ro
+      # Thanks to POETRY_HOME being set to "/opt/poetry/home",
+      # any venv folders on the host file system at this path
+      # will not be used by poetry within the Docker environment.
+    tty: true
+    env_file:
+      - .env
+    environment:
+      FOO: "bar"
