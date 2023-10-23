@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 ghcr.io/owl-corp/python-poetry-base:3-slim
+FROM ghcr.io/owl-corp/python-poetry-base:3-slim
 
 # Install project dependencies
 WORKDIR /my-app
@@ -8,5 +8,5 @@ RUN poetry install
 # Copy the source code in last to optimize rebuilding the image
 COPY . .
 
-ENTRYPOINT ["poetry"]
-CMD ["run", "python", "-m", "app"]
+ENTRYPOINT ["poetry", "run"]
+CMD ["python", "-m", "app"]
