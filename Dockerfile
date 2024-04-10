@@ -4,7 +4,7 @@ FROM python:$python_version
 
 # POETRY_VIRTUALENVS_IN_PROJECT is required to ensure in-projects venvs mounted from the host in dev
 # don't get prioritised by `poetry run`
-ENV POETRY_VERSION=1.7.1 \
+ENV POETRY_VERSION=1.8.2 \
   POETRY_HOME="/opt/poetry/home" \
   POETRY_CACHE_DIR="/opt/poetry/cache" \
   POETRY_NO_INTERACTION=1 \
