@@ -8,9 +8,6 @@ on:
     paths:
       - 'Dockerfile'
       - '.github/workflows/**'
-  schedule:
-    # Rerun CI daily to keep up-to-date with upstream python updates
-    - cron: '0 0 * * *'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
