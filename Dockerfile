@@ -12,9 +12,5 @@ ENV POETRY_VERSION=1.8.5 \
 
 ENV PATH="$POETRY_HOME/bin:$PATH"
 
-RUN apt-get update \
-  && apt-get -y upgrade \
-  && apt-get install --no-install-recommends -y curl \
-  && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-RUN curl -sSL https://install.python-poetry.org | python
+ADD https://install.python-poetry.org /tmp/poetry_install.py
+RUN python /tmp/poetry_install.py && rm /tmp/poetry_install.py
