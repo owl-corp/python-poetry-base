@@ -1,4 +1,4 @@
-ARG python_version=3-slim
+ARG python_version=3.14-rc-slim
 
 FROM python:$python_version
 
