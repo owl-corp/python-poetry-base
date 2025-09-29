@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -48,9 +48,6 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN  }}
 
-      # Build and push the container to the GitHub Container
-      # Repository. The container will be tagged as "latest"
-      # and with the short SHA of the commit.
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
