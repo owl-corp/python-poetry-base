@@ -17,7 +17,17 @@ jobs:
   build:
     strategy:
       matrix:
-        python_version: ["3.10", 3.10-slim, "3.11", 3.11-slim, "3.12", 3.12-slim, "3.13", 3.13-slim, "3", 3-slim]
+        python_version:
+          - "3.10"
+          - "3.10-slim"
+          - "3.11"
+          - "3.11-slim"
+          - "3.12"
+          - "3.12-slim"
+          - "3.13"
+          - "3.13-slim"
+          - "3"
+          - "3-slim"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
