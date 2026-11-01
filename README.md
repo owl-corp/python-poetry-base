@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This repo is no longer maintainer, and has been archived. The maintainers have migrated to uv.
+
 # python-poetry-base
 A base Dockerfile with poetry pre-installed. Using this image as a base will allow you to forget about anything required to setup poetry within your Docker environment.
 
